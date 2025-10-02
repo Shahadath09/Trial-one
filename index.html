@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday Sheful Bhai!</title>
+    <!-- Typed.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <style>
         * {
             margin: 0;
@@ -138,12 +140,26 @@
             color: transparent;
             line-height: 1.4;
             margin-bottom: 20px;
+            min-height: 120px;
         }
 
         .signature {
             color: #FFD700;
             font-size: 1.1rem;
             font-weight: 600;
+            margin-top: 20px;
+        }
+
+        .typed-cursor {
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            opacity: 1;
+            animation: typedjsBlink 0.7s infinite;
+        }
+
+        @keyframes typedjsBlink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
         }
     </style>
 </head>
@@ -153,41 +169,46 @@
         
         <div class="cake-container">
             <svg id="cake" version="1.1" x="0px" y="0px" width="200px" height="500px" viewBox="0 0 200 500" enable-background="new 0 0 200 500" xml:space="preserve">
-                <!-- Candle -->
+                <!-- Candle - Made bigger and more prominent -->
                 <g id="candle" opacity="0">
                     <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="6s" fill="freeze" />
                     
-                    <!-- Candle stick -->
-                    <rect x="98" y="380" width="4" height="35" fill="#ffffff" rx="2"/>
+                    <!-- Candle stick - Made bigger -->
+                    <rect x="94" y="360" width="12" height="50" fill="#ffffff" rx="6"/>
                     
                     <!-- Candle decorations -->
-                    <rect x="98" y="390" width="4" height="2" fill="rgba(255,0,0,0.4)"/>
-                    <rect x="98" y="395" width="4" height="2" fill="rgba(255,0,0,0.4)"/>
+                    <rect x="94" y="380" width="12" height="3" fill="rgba(255,0,0,0.4)"/>
+                    <rect x="94" y="388" width="12" height="3" fill="rgba(255,0,0,0.4)"/>
                     
-                    <!-- Flames -->
-                    <circle cx="100" cy="375" r="3" fill="rgba(254,248,97,0.5)">
-                        <animate attributeName="r" values="3;2;3" dur="2s" begin="6.5s" repeatCount="indefinite"/>
-                        <animate attributeName="opacity" values="0.8;0.4;0.8" dur="2s" begin="6.5s" repeatCount="indefinite"/>
+                    <!-- Flames - Made bigger and more realistic -->
+                    <circle cx="100" cy="355" r="5" fill="rgba(254,248,97,0.8)">
+                        <animate attributeName="r" values="5;3;5" dur="1.8s" begin="6.5s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" values="0.9;0.5;0.9" dur="1.8s" begin="6.5s" repeatCount="indefinite"/>
+                        <animate attributeName="cy" values="355;353;355" dur="1.8s" begin="6.5s" repeatCount="indefinite"/>
                     </circle>
-                    <circle cx="100" cy="375" r="2.5" fill="rgba(254,248,97,0.4)">
-                        <animate attributeName="r" values="2.5;1.5;2.5" dur="1.5s" begin="6.5s" repeatCount="indefinite"/>
-                        <animate attributeName="opacity" values="0.7;0.3;0.7" dur="1.5s" begin="6.5s" repeatCount="indefinite"/>
+                    <circle cx="100" cy="355" r="4" fill="rgba(254,248,97,0.6)">
+                        <animate attributeName="r" values="4;2.5;4" dur="1.5s" begin="6.5s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" values="0.8;0.4;0.8" dur="1.5s" begin="6.5s" repeatCount="indefinite"/>
+                        <animate attributeName="cy" values="355;353;355" dur="1.5s" begin="6.5s" repeatCount="indefinite"/>
                     </circle>
-                    <circle cx="100" cy="375" r="2" fill="rgba(254,248,97,0.3)">
-                        <animate attributeName="r" values="2;1;2" dur="1s" begin="6.5s" repeatCount="indefinite"/>
-                        <animate attributeName="opacity" values="0.6;0.2;0.6" dur="1s" begin="6.5s" repeatCount="indefinite"/>
+                    <circle cx="100" cy="355" r="3" fill="rgba(254,248,97,0.4)">
+                        <animate attributeName="r" values="3;2;3" dur="1.2s" begin="6.5s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" values="0.7;0.3;0.7" dur="1.2s" begin="6.5s" repeatCount="indefinite"/>
+                        <animate attributeName="cy" values="355;353;355" dur="1.2s" begin="6.5s" repeatCount="indefinite"/>
                     </circle>
-                    <circle cx="100" cy="375" r="1.5" fill="rgba(255,50,0,0.2)">
-                        <animate attributeName="r" values="1.5;0.8;1.5" dur="0.5s" begin="6.5s" repeatCount="indefinite"/>
+                    <circle cx="100" cy="355" r="2.5" fill="rgba(255,100,0,0.3)">
+                        <animate attributeName="r" values="2.5;1.5;2.5" dur="0.8s" begin="6.5s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" values="0.6;0.2;0.6" dur="0.8s" begin="6.5s" repeatCount="indefinite"/>
+                        <animate attributeName="cy" values="355;353;355" dur="0.8s" begin="6.5s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="100" cy="355" r="2" fill="rgba(255,50,0,0.2)">
+                        <animate attributeName="r" values="2;1;2" dur="0.5s" begin="6.5s" repeatCount="indefinite"/>
                         <animate attributeName="opacity" values="0.5;0.1;0.5" dur="0.5s" begin="6.5s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="100" cy="375" r="1" fill="rgba(255,50,0,0.1)">
-                        <animate attributeName="r" values="1;0.5;1" dur="0.2s" begin="6.5s" repeatCount="indefinite"/>
-                        <animate attributeName="opacity" values="0.4;0.1;0.4" dur="0.2s" begin="6.5s" repeatCount="indefinite"/>
+                        <animate attributeName="cy" values="355;353;355" dur="0.5s" begin="6.5s" repeatCount="indefinite"/>
                     </circle>
                 </g>
 
-                <!-- Cake paths -->
+                <!-- Cake paths - Same as before -->
                 <path fill="#a88679" d="M173.667-13.94c-49.298,0-102.782,0-147.334,0c-3.999,0-4-16.002,0-16.002
                     c44.697,0,96.586,0,147.334,0C177.667-29.942,177.668-13.94,173.667-13.94z">
                     <animate id="bizcocho_3" attributeName="d" calcMode="spline" keySplines="0 0 1 1; 0 0 1 1" begin="relleno_2.end" dur="0.3s" fill="freeze" values="
@@ -346,8 +367,7 @@
     <canvas id="confetti-canvas"></canvas>
     
     <div id="outro-section">
-        <p class="outro-message">Wishing you the most incredible birthday filled with joy, laughter, and unforgettable moments!</p>
-        <p class="outro-message">May this year bring you success in everything you do and all your dreams come true!</p>
+        <div id="typed-outro" class="outro-message"></div>
         <div class="signature">Made with ❤️ for your special day!</div>
     </div>
 
@@ -357,6 +377,7 @@
         const blowBtn = document.getElementById('blow-candle-btn');
         const celebrateBtn = document.getElementById('celebrate-btn');
         const outroSection = document.getElementById('outro-section');
+        const typedOutro = document.getElementById('typed-outro');
         const canvas = document.getElementById('confetti-canvas');
         const ctx = canvas.getContext('2d');
 
@@ -366,15 +387,21 @@
         let confettiStartTime;
         const DURATION = 3000; // 3 seconds
 
+        // Typed.js instance
+        let typed;
+
         // === EVENT LISTENERS ===
         
         // 1. BLOW THE CANDLE BUTTON
         blowBtn.addEventListener('click', () => {
-            // Extinguish candle flames
+            // Extinguish candle flames with realistic animation
             const flames = document.querySelectorAll('#candle circle');
-            flames.forEach(flame => {
-                flame.style.animation = 'none';
-                flame.style.opacity = '0';
+            flames.forEach((flame, index) => {
+                setTimeout(() => {
+                    flame.style.animation = 'none';
+                    flame.style.opacity = '0';
+                    flame.style.transform = 'translateY(10px) scale(0.5)';
+                }, index * 100);
             });
             
             // Swap buttons
@@ -539,7 +566,27 @@
                 mainContent.style.display = 'none';
                 outroSection.style.opacity = '1';
                 outroSection.style.pointerEvents = 'auto';
+                
+                // Initialize Typed.js for the outro message
+                initializeTypedJS();
             }, 800);
+        }
+        
+        function initializeTypedJS() {
+            // Typed.js configuration for professional typing effect
+            typed = new Typed('#typed-outro', {
+                strings: [
+                    'Wishing you the most incredible birthday filled with joy, laughter, and unforgettable moments!^1000\n\nMay this year bring you success in everything you do and all your dreams come true!'
+                ],
+                typeSpeed: 40,
+                backSpeed: 0,
+                backDelay: 1000,
+                startDelay: 500,
+                loop: false,
+                showCursor: true,
+                cursorChar: '|',
+                contentType: 'text'
+            });
         }
         
         // === INITIALIZATION ===
